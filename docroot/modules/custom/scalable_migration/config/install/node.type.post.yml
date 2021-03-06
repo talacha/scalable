@@ -1,0 +1,17 @@
+uuid: 751d3109-32f9-4ce0-a669-74899fd2261a
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Post
+type: post
+description: 'Imported with Scalable Migrate'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

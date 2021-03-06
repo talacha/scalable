@@ -1,0 +1,44 @@
+uuid: a2e64ad2-a13c-4adb-840c-8a56346be8ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.author.body
+    - field.field.node.author.field_address
+    - field.field.node.author.field_company
+    - field.field.node.author.field_email
+    - field.field.node.author.field_name
+    - field.field.node.author.field_phone
+    - field.field.node.author.field_username
+    - field.field.node.author.field_website
+    - node.type.author
+  module:
+    - text
+    - user
+id: node.author.teaser
+targetEntityType: node
+bundle: author
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_address: true
+  field_company: true
+  field_email: true
+  field_name: true
+  field_phone: true
+  field_username: true
+  field_website: true

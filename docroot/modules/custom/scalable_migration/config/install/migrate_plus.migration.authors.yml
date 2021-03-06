@@ -1,0 +1,123 @@
+uuid: 26feee2b-0637-4be4-8c31-36db020d5d7a
+langcode: en
+status: true
+dependencies: {  }
+id: authors
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'json example'
+migration_group: Scalable
+label: 'Consumes a JSON feed of Authors'
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: json
+  urls:
+    - 'https://jsonplaceholder.typicode.com/users'
+  constants:
+    protocol: 'http://'
+  fields:
+    -
+      name: nid
+      label: 'Author ID'
+      selector: id
+    -
+      name: name
+      label: 'Author Name'
+      selector: name
+    -
+      name: username
+      label: 'User Name'
+      selector: username
+    -
+      name: email
+      label: Email
+      selector: email
+    -
+      name: phone
+      label: Phone
+      selector: phone
+    -
+      name: website
+      label: Website
+      selector: website
+    -
+      name: street
+      label: 'Address: Street'
+      selector: address/street
+    -
+      name: suite
+      label: 'Address: Suite'
+      selector: address/suite
+    -
+      name: city
+      label: 'Address: City'
+      selector: address/city
+    -
+      name: zipcode
+      label: 'Address: Zipcode'
+      selector: address/zipcode
+    -
+      name: lat
+      label: 'Address: Geo: Latitude'
+      selector: address/geo/lat
+    -
+      name: lng
+      label: 'Address: Geo: Longitude'
+      selector: address/geo/lng
+    -
+      name: company_name
+      label: 'Company: Name'
+      selector: company/name
+    -
+      name: company_catch_phrase
+      label: 'Company: Catch Phrase'
+      selector: company/catchPhrase
+    -
+      name: company_bs
+      label: 'Company: BS'
+      selector: company/bs
+  ids:
+    nid:
+      type: integer
+process:
+  type:
+    plugin: default_value
+    default_value: author
+  nid: nid
+  title: name
+  field_name: name
+  field_email: email
+  field_phone: phone
+  field_username: username
+  field_website/uri:
+    -
+      plugin: concat
+      source:
+        - constants/protocol
+        - website
+  field_address/country_code:
+    plugin: default_value
+    default_value: US
+  field_address/organization: company_name
+  field_address/address_line1: street
+  field_address/address_line2: suite
+  field_address/postal_code: zipcode
+  field_address/locality: city
+  field_company:
+    plugin: entity_lookup
+    source: company_name
+    entity_type: node
+    value_key: title
+    bundle: company
+  sticky:
+    plugin: default_value
+    default_value: 0
+  uid:
+    plugin: default_value
+    default_value: 1
+destination:
+  plugin: 'entity:node'
+migration_dependencies: {  }

@@ -1,0 +1,29 @@
+uuid: 2e03b907-cc1b-4560-abdd-0c0a5212c4b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_bs
+    - node.type.company
+    - taxonomy.vocabulary.bs
+id: node.company.field_bs
+field_name: field_bs
+entity_type: node
+bundle: company
+label: BS
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      bs: bs
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

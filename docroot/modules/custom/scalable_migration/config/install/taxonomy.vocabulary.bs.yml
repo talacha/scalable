@@ -1,0 +1,8 @@
+uuid: 19209c6f-e1d1-48bf-9210-ac7d669f8d9b
+langcode: en
+status: true
+dependencies: {  }
+name: BS
+vid: bs
+description: 'Collection of terms for a company.'
+weight: 0

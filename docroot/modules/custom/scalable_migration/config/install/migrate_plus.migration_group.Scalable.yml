@@ -1,0 +1,10 @@
+uuid: 3e0b6895-f8a3-4c1a-ace7-07cde221df0b
+langcode: en
+status: true
+dependencies: {  }
+id: Scalable
+label: Scalable
+description: ''
+source_type: null
+module: null
+shared_configuration: null

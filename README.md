@@ -1,4 +1,9 @@
-# Docksal powered Drupal 8 Installation
+# Scalable Path Test
+## A Docksal powered Drupal 8 Installation
+
+
+![Scalable Path](https://image4.owler.com/logo/scalable-path_owler_20161022_061134_original.png)
+
 
 This is a sample vanilla Drupal 8 installation pre-configured for use with Docksal.  
 
@@ -63,3 +68,10 @@ Some common tasks that can be handled by the init script (an other [custom comma
 This repo is intended for quick start demos and includes a hardcoded value for `hash_salt` in `settings.php`.  
 If you are basing your project code base on this repo, make sure you regenerate and update the `hash_salt` value.  
 A new value can be generated with `drush ev '$hash = Drupal\Component\Utility\Crypt::randomBytesBase64(55); print $hash . "\n";'` 
+
+## Next steps:
+
+Once your site is up and running try `fin composer install` to ensure all the
+contrib modules are in place.
+
+Then enable scalable_migration with `fin pm-enable scalable_migration`.
